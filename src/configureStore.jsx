@@ -5,8 +5,6 @@ import { loadState, saveState } from './repository/LocalStorage'
 import rootReducer from './reducer/todoApp'
 
 const configureStore = () => {
-    const persistedStore = loadState();
-
     const store = createStore(rootReducer, loadState());
 
     store.subscribe(throttle(
@@ -17,6 +15,8 @@ const configureStore = () => {
         },
         1000,
     ));
+
+    return store;
 };
 
 export default configureStore;

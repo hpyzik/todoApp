@@ -1,3 +1,4 @@
+import createBrowserHistory from 'history/createBrowserHistory'
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -5,9 +6,13 @@ import { Router, Route } from 'react-router';
 
 import InitialScreen from './screan/TodoApp'
 
+const history = createBrowserHistory();
+
 const Root = ({ store }) => (
     <Provider store={ store }>
-        <InitialScreen />
+        <Router history={ history }>
+            <Route path='/' component={ InitialScreen } />
+        </Router>
     </Provider>
 );
 

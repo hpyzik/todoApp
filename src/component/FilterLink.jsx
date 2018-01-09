@@ -3,7 +3,7 @@ import React from 'react';
 
 const FilterLink = ({ filter, children }) => (
     <NavLink
-        to={ filter === 'all' ? '' : filter }
+        to={ '/' + ( filter === '/all' ? '' : filter ) }
         activeStyle={ {
             textDecoration: 'none',
             color: 'black',

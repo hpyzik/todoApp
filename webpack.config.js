@@ -19,4 +19,9 @@ module.exports = {
     resolve: {
         extensions: [".jsx", ".json", ".js"],
     },
+    devServer: {
+        historyApiFallback: {
+            index: 'index.html',
+        },
+    },
 };

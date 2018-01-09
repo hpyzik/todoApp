@@ -11,7 +11,7 @@ const history = createBrowserHistory();
 const Root = ({ store }) => (
     <Provider store={ store }>
         <Router history={ history }>
-            <Route path='/' component={ InitialScreen } />
+            <Route path='/:filter?' component={ InitialScreen } />
         </Router>
     </Provider>
 );
